@@ -26,6 +26,7 @@
     "typescript": "^5.8.2"
   },
   "dependencies": {
+    "dotenv": "^16.4.7",
     "monsterapi": "^0.0.5"
   }
 }
