@@ -1,24 +1,17 @@
-import MonsterAPI from 'monsterapi';
 import dotenv from 'dotenv';
 dotenv.config();
 
-const apiKey = process.env.MONSTER_API_KEY;
-if (!apiKey) {
-  throw new Error("MONSTER_API_KEY is not defined in the environment variables.");
-}
-const client = new MonsterAPI(apiKey);
+import { GoogleGenAI } from "@google/genai";
 
-const model = "falcon-7b-instruct"; 
-const input = {
-  prompt:"Hello",
-};
+const ai = new GoogleGenAI({ apiKey: process.env.GOOGLE_API_KEY! });
 
-client
-  .generate(model, input)
-  .then((response) => {
-    console.log("Generated content:", response);
-  })
-  .catch((error) => {
-    // Handle API errors
-    console.error("Error:", error);
+async function main() {
+  const response = await ai.models.generateContent({
+    model: "gemini-2.0-flash",
+    contents: "Explain how AI works in a few words"
   });
+
+  console.log(response.text);
+}
+
+await main();
