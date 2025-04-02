@@ -7,7 +7,8 @@
   "scripts": {
     "dev": "tsx src/index.ts",
     "build": "tsc",
-    "start": "node dist/index.js"
+    "start": "node dist/index.js",
+    "api": "tsx src/server.ts"
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,7 @@
     "@types/cors": "^2.8.17",
     "@types/express": "^5.0.1",
     "@types/node": "^22.13.16",
+    "@types/pg": "^8.11.11",
     "nodemon": "^3.1.9",
     "tsx": "^4.19.3",
     "typescript": "^5.8.2",
@@ -37,6 +39,7 @@
     "express": "^5.1.0",
     "isomorphic-fetch": "^3.0.0",
     "monsterapi": "^0.0.5",
+    "pg": "^8.14.1",
     "undici": "^7.6.0"
   }
 }
