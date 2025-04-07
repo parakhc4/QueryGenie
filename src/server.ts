@@ -18,6 +18,7 @@ app.post('/generate', async (req, res) => {
     return res.status(400).json({ success: false, error: 'Prompt is required' });
   }
 
+
   // Placeholder for actual LLM integration
   const generatedSQL = `SELECT * FROM table WHERE query = '${prompt}'`; // fake SQL
   const naturalResponse = `Fake response for: "${prompt}"`;

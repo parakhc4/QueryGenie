@@ -8,7 +8,8 @@
     "dev": "tsx src/index.ts",
     "build": "tsc",
     "start": "node dist/index.js",
-    "api": "tsx src/server.ts"
+    "api": "tsx src/server.ts",
+    "db" : "tsx src/db.ts"
   },
   "repository": {
     "type": "git",
