@@ -8,8 +8,8 @@
     "dev": "tsx src/index.ts",
     "build": "tsc",
     "start": "node dist/index.js",
-    "api": "tsx src/server.ts",
-    "db" : "tsx src/db.ts"
+    "api": "node --experimental-fetch --loader tsx src/server.ts",
+    "db": "tsx src/db.ts"
   },
   "repository": {
     "type": "git",
@@ -40,7 +40,6 @@
     "express": "^5.1.0",
     "isomorphic-fetch": "^3.0.0",
     "monsterapi": "^0.0.5",
-    "pg": "^8.14.1",
-    "undici": "^7.6.0"
+    "pg": "^8.14.1"
   }
 }

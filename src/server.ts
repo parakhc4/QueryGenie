@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import {generateSQLFromPrompt} from './llm/gemini.ts';
 
 dotenv.config();
 
@@ -17,20 +18,20 @@ app.post('/generate', async (req, res) => {
   if (!prompt) {
     return res.status(400).json({ success: false, error: 'Prompt is required' });
   }
-
-
-  // Placeholder for actual LLM integration
-  const generatedSQL = `SELECT * FROM table WHERE query = '${prompt}'`; // fake SQL
-  const naturalResponse = `Fake response for: "${prompt}"`;
-
+  const sql = await generateSQLFromPrompt(prompt);
+  console.log(sql);
+  
   return res.json({
     success: true,
     prompt,
-    sql: generatedSQL,
-    response: naturalResponse
+    response: sql,
   });
+  
 });
 
+
+
+// To listen
 app.listen(PORT, () => {
   console.log(`🚀 Server running on http://localhost:${PORT}`);
 });
