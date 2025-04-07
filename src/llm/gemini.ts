@@ -62,7 +62,6 @@ const result = await ai.models.generateContent({
   
     console.log("🧠 Gemini raw result:", result);
   
-    // ✅ Extract from first candidate
     const candidate = result.candidates?.[0];
   
     if (!candidate?.content?.parts?.[0]?.text) {
