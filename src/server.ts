@@ -3,6 +3,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import {generateSQLFromPrompt} from './llm/gemini.ts';
 import { extractSQLFromPrompt } from './llm/validation.js';
+import {runQuery} from './db/queryExecutor.js';
 
 dotenv.config();
 
@@ -21,16 +22,20 @@ app.post('/generate', async (req, res) => {
   }
   const sql = await generateSQLFromPrompt(prompt);
 
-  console.log(sql);
+  console.log(sql); // PEHLA RESPONSE
 
   const validated_sql = await extractSQLFromPrompt(sql);
 
-  console.log(validated_sql)
+  console.log(validated_sql) // DOOSRA RESPONSE
+
+  const SQLResponse = await runQuery(validated_sql);
+
+  console.log(SQLResponse); // SQL RESPONSE
   
   return res.json({
     success: true,
     prompt,
-    response: validated_sql,
+    response: SQLResponse,
   });
   
 });
