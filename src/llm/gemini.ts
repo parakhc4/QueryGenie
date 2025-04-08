@@ -25,7 +25,7 @@ Rules:
 `;
 
 const result = await ai.models.generateContent({
-    model: "gemini-2.0-flash",
+    model: "gemini-1.5-pro",
     contents: [
       {
         role: "user",

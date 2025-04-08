@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import {generateSQLFromPrompt} from './llm/gemini.ts';
+import { extractSQLFromPrompt } from './llm/validation.js';
 
 dotenv.config();
 
@@ -19,12 +20,17 @@ app.post('/generate', async (req, res) => {
     return res.status(400).json({ success: false, error: 'Prompt is required' });
   }
   const sql = await generateSQLFromPrompt(prompt);
+
   console.log(sql);
+
+  const validated_sql = await extractSQLFromPrompt(sql);
+
+  console.log(validated_sql)
   
   return res.json({
     success: true,
     prompt,
-    response: sql,
+    response: validated_sql,
   });
   
 });
