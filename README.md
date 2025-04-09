@@ -25,7 +25,7 @@ Simply type the question in natural language, and our app will:
 
 > "Currently, there are 15 packets of Milk in the database."
 
-![Screenshot of a comment on a GitHub issue showing an image, added in the Markdown, of an Octocat smiling and raising a tentacle.]()
+![Screenshot of a comment on a GitHub issue showing an image, added in the Markdown, of an Octocat smiling and raising a tentacle.](assets/Flowchart.png)
 
 References :
 LLM (Gemini API) Connection : https://ai.google.dev/gemini-api/docs#javascript
