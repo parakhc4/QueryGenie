@@ -27,6 +27,6 @@ Simply type the question in natural language, and our app will:
 
 ![Screenshot of a comment on a GitHub issue showing an image, added in the Markdown, of an Octocat smiling and raising a tentacle.](assets/Flowchart.png)
 
-References :
-LLM (Gemini API) Connection : https://ai.google.dev/gemini-api/docs#javascript
+## References :
+LLM (Gemini API) Connection : https://ai.google.dev/gemini-api/docs#javascript \
 PostGRE connection : https://node-postgres.com/
